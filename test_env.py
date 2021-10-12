@@ -13,7 +13,7 @@ if __name__ == "__main__":
             env.step(action)
         except KeyboardInterrupt:
             env.close()
-            input("press any key to continue")
+            input()
             env.reset()
 
     env.close()
