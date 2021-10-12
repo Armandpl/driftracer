@@ -1,19 +1,14 @@
 import gym
 import drift_gym
 
-if __name__ == "__main__":
-    env = gym.make("Real-v0")
+env = gym.make("Real-v0")
 
-    env.reset()
-    print("let's go")
+env.reset()
+print("let's go")
 
-    for i in range(1000):
-        try:
-            action = 1.0
-            env.step(action)
-        except KeyboardInterrupt:
-            env.close()
-            input()
-            env.reset()
+for i in range(100):
+    action = \
+        env.action_space.sample()
+    env.step(action)
 
-    env.close()
+env.close()
